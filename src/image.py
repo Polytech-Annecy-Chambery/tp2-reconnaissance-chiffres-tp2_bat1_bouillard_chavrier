@@ -93,9 +93,7 @@ class Image:
                         l_max=l
                         
         res= Image()
-        res.pixels[0:l_max-l_min+1,0:c_max-c_min+1]=self.pixels[l_min:l_max+1,c_min:c_max+1]
-        
-        res.set_pixels(np.zeros((self.H, self.W), dtype=np.uint8))
+        res.set_pixels(self.pixels[l_min:l_max+1,c_min:c_max+1])
         
         return res
 
